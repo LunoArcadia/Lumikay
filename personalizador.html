@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personalizador de Velas</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="personalizador.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Banner -->
+  <div class="top-banner">
+    <div class="banner-text">
+      <span>DELIVERY INMEDIATO | ENVÍOS A TODO LIMA</span>
+      <span>DELIVERY INMEDIATO | ENVÍOS A TODO LIMA</span>
+      <span>DELIVERY INMEDIATO | ENVÍOS A TODO LIMA</span>
+      <span>DELIVERY INMEDIATO | ENVÍOS A TODO LIMA</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <button class="boton-busqueda">🔍 Buscar</button>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><img src="Logo.png" alt="Logo MiTienda" class="logo-img" /></a>
+    </div>
+    <div class="header-right">
+      <a href="#" class="cuenta">Cuenta</a>
+      <a href="#" class="carrito">🛒 Carrito</a>
+    </div>
+  </header>
+
+  <!-- Menú -->
+  <nav class="menu-secciones">
+    <a href="index.html" class="boton-seccion">Inicio</a>
+    <a href="comprar.html" class="boton-seccion">Comprar velas aromáticas</a>
+    <a href="personalizador.html" class="boton-seccion">Personalizador de velas</a>
+    <a href="contacto.html" class="boton-seccion">Contacto</a>
+  </nav>
+
+  <!-- Personalizador -->
+  <main class="contenedor-personalizador">
+    <section class="vista-previa">
+      <img id="imagen-vela" src="LLama 2.jpg" alt="Vista previa de vela">
+    </section>
+
+    <section class="opciones-personalizador">
+      <h2>Personaliza tu vela</h2>
+
+      <div class="grupo-opcion">
+        <h3>1. Forma</h3>
+        <label><input type="radio" name="forma" value="llama" data-img="LLama 2.jpg"> Llama </label>
+        <label><input type="radio" name="forma" value="copa" data-img="Osito en copita.jpg"> Copa con Osito </label>
+        <label><input type="radio" name="forma" value="envase" data-img="Osito en envase.jpg"> Osito en Envase </label>
+        <label><input type="radio" name="forma" value="gato" data-img="Gato.jpg"> Gato </label>
+      </div>
+
+      <div class="grupo-opcion">
+        <h3>2. Colores (Máx. 2)</h3>
+        <label><input type="checkbox" name="color" value="rojo"> Rojo</label>
+        <label><input type="checkbox" name="color" value="azul"> Azul</label>
+        <label><input type="checkbox" name="color" value="verde"> Verde</label>
+        <label><input type="checkbox" name="color" value="rosa"> Rosa</label>
+        <label><input type="checkbox" name="color" value="morado"> Morado</label>
+      </div>
+
+      <div class="grupo-opcion">
+        <h3>3. Esencias (Máx. 3)</h3>
+        <label><input type="checkbox" name="esencia" value="vainilla"> Vainilla</label>
+        <label><input type="checkbox" name="esencia" value="lavanda"> Lavanda</label>
+        <label><input type="checkbox" name="esencia" value="bergamota"> Bergamota</label>
+        <label><input type="checkbox" name="esencia" value="limón"> Limón</label>
+        <label><input type="checkbox" name="esencia" value="eucalipto"> Eucalipto</label>
+      </div>
+
+      <div class="grupo-opcion oculto" id="seccion-mensaje">
+        <h3>4. Mensaje personalizado</h3>
+        <input type="text" id="mensaje" placeholder="Escribe tu mensaje... ">
+      </div>
+
+      <div class="resultado">
+        <p>Total: <strong>S/ <span id="precio-total">0.00</span></strong></p>
+      </div>
+
+      <button id="agregar-carrito">Agregar al carrito</button>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Lumikay - Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Modales -->
+  <div id="modal-cuenta" class="modal oculto">
+    <div class="modal-contenido">
+      <span class="cerrar-modal" id="cerrar-cuenta">&times;</span>
+      <h2>Iniciar Sesión</h2>
+      <form id="form-cuenta">
+        <label for="usuario">Usuario o Correo</label>
+        <input type="text" id="usuario" name="usuario" required />
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" required />
+        <button type="submit" class="boton-carrito">Iniciar Sesión</button>
+      </form>
+      <div class="extra-links">
+        <a href="#">¿Olvidaste tu contraseña?</a> |
+        <a href="#">Crear cuenta</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-busqueda" class="modal oculto">
+    <div class="modal-contenido">
+      <span class="cerrar-modal" id="cerrar-busqueda">&times;</span>
+      <input type="text" id="input-busqueda" placeholder="Buscar productos..." />
+      <div id="resultados-busqueda"></div>
+    </div>
+  </div>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/51933848345" 
+     class="boton-wsp" 
+     target="_blank" 
+     title="Contáctanos por WhatsApp">
+    <img src="WhatsApp.png" alt="WhatsApp" />
+  </a>
+<!-- Carrito (modal mejorado) -->
+<div id="carrito-modal" class="modal oculto">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" id="cerrar-carrito">&times;</span>
+    <h2>Tu Carrito</h2>
+    <div id="carrito-items"></div>
+    <div class="carrito-total">
+      <strong>Total: S/ <span id="carrito-total">0.00</span></strong>
+    </div>
+    <button class="boton-carrito" id="finalizar-compra">Finalizar compra</button>
+  </div>
+</div>
+<div id="notificacion-contenedor"></div>
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="personalizador.js"></script>
+</body>
+</html>

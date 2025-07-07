@@ -1,0 +1,111 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fdfaf7;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.cuenta-header {
+  background-color: #b08c76;
+  color: white;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.cuenta-main {
+  background: white;
+  margin-top: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  padding: 2rem;
+}
+
+.cuenta-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.tarjeta-usuario {
+  background-color: #f8f5f1;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.puntos {
+  color: #9c6e52;
+  font-weight: bold;
+}
+
+.cuenta-cupones, .cuenta-compras {
+  margin-bottom: 2rem;
+}
+
+.cupones-lista {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cupones-lista li {
+  background: #fff9f5;
+  padding: 0.8rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  border: 1px dashed #b08c76;
+}
+
+.compra-item {
+  background: #f5f2ee;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #b08c76;
+  border-radius: 6px;
+}
+
+.estado {
+  font-weight: bold;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.estado.entregado {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.estado.en-proceso {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.cuenta-footer {
+  background-color: #3c3c3d;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.boton-cerrar-sesion {
+  background-color: #c44f4f;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  float: right;
+  margin-top: -3.5rem;
+}
+
+.boton-cerrar-sesion:hover {
+  background-color: #a83f3f;
+}

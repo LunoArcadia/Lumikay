@@ -1,0 +1,213 @@
+/* ===== Estilos generales elegantes ===== */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fffdf8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 3em 2em;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ===== Título ===== */
+h1 {
+  text-align: center;
+  margin-bottom: 2.5em;
+  font-size: 2.2em;
+  color: #6a4c37;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  width: 80px;
+  height: 3px;
+  background-color: #b08c76;
+  display: block;
+  margin: 0.5em auto 0;
+  border-radius: 5px;
+}
+
+/* ===== Galería de productos ===== */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+}
+
+.producto {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.producto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.producto img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.producto h3 {
+  margin: 0.5em 0 0.3em;
+  font-size: 1.1em;
+  color: #5e3f2b;
+  text-align: center;
+}
+
+.producto .precio {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #3c3c3d;
+  margin-bottom: 1em;
+}
+
+.boton-carrito {
+  padding: 0.6em 1.4em;
+  background-color: #b08c76;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.boton-carrito:hover {
+  background-color: #9c7963;
+  transform: scale(1.05);
+}
+
+/* ===== Modal general ===== */
+.modal {
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.05);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2em;
+  overflow-y: auto;
+}
+
+
+.modal-contenido {
+  background: white;
+  border-radius: 10px;
+  padding: 2em;
+  max-width: 800px;
+  width: 90%;
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+#modal-img {
+  flex: 1 1 300px;
+  max-width: 350px;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+#modal-info {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+#modal-nombre {
+  font-size: 1.5em;
+  color: #6a4c37;
+  margin-bottom: 0.5em;
+}
+
+#modal-desc {
+  font-size: 1em;
+  margin-bottom: 1em;
+  color: #555;
+}
+
+#modal-precio {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #3c3c3d;
+}
+
+
+/* ===== Cerrar modal ===== */
+.cerrar-modal {
+  position: absolute;
+  top: 0.8em;
+  right: 1em;
+  font-size: 1.5em;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cerrar-modal:hover {
+  color: #333;
+}
+
+/* ===== Ocultar elementos ===== */
+.oculto {
+  display: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .productos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .productos-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1em;
+  }
+
+  .producto img {
+    max-height: 160px;
+  }
+}
+.modal.activo {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
