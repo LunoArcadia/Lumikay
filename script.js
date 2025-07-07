@@ -155,6 +155,13 @@ const carritoItems = document.getElementById("carrito-items");
 const carritoTotal = document.getElementById("carrito-total");
 const carritoBtn = document.querySelector(".carrito");
 
+const cuponInput = document.getElementById("cupon-input");
+const aplicarCuponBtn = document.getElementById("aplicar-cupon");
+const cuponMensaje = document.getElementById("cupon-mensaje");
+
+let descuentoActivo = false;
+let porcentajeDescuento = 0;
+
 if (carritoBtn && carritoModal) {
   carritoBtn.addEventListener("click", () => {
     actualizarCarrito();
@@ -200,7 +207,13 @@ function actualizarCarrito() {
     carritoItems.appendChild(itemDiv);
     total += item.precio * item.cantidad;
   });
-  carritoTotal.textContent = total.toFixed(2);
+
+  let totalFinal = total;
+  if (descuentoActivo) {
+    totalFinal = total - (total * porcentajeDescuento);
+  }
+
+  carritoTotal.textContent = totalFinal.toFixed(2);
 
   document.querySelectorAll('.item-cantidad input').forEach(input => {
     input.addEventListener('change', (e) => {
@@ -223,6 +236,26 @@ function actualizarCarrito() {
     });
   });
 }
+
+// Aplicar cupón
+if (aplicarCuponBtn && cuponInput) {
+  aplicarCuponBtn.addEventListener("click", () => {
+    const codigo = cuponInput.value.trim().toUpperCase();
+    if (codigo === "LUMI15") {
+      descuentoActivo = true;
+      porcentajeDescuento = 0.15;
+      cuponMensaje.style.color = "green";
+      cuponMensaje.textContent = "Cupón aplicado: 15% de descuento.";
+    } else {
+      descuentoActivo = false;
+      porcentajeDescuento = 0;
+      cuponMensaje.style.color = "red";
+      cuponMensaje.textContent = "Código inválido.";
+    }
+    actualizarCarrito();
+  });
+}
+
 
 // =====================
 // Personalizador de vela

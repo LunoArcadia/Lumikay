@@ -145,10 +145,21 @@
   <div class="modal-contenido">
     <span class="cerrar-modal" id="cerrar-carrito">&times;</span>
     <h2>Tu Carrito</h2>
+    
     <div id="carrito-items"></div>
+    
+    <!-- Campo para el código de descuento -->
+    <div class="carrito-cupon">
+      <input type="text" id="cupon-input" placeholder="Código de descuento" />
+      <button id="aplicar-cupon" class="boton-carrito">Aplicar</button>
+      <p id="cupon-mensaje" style="color: green; margin-top: 0.5em;"></p>
+    </div>
+    
+    <!-- Total del carrito -->
     <div class="carrito-total">
       <strong>Total: S/ <span id="carrito-total">0.00</span></strong>
     </div>
+
     <button class="boton-carrito" id="finalizar-compra">Finalizar compra</button>
   </div>
 </div>
