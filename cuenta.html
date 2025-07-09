@@ -99,6 +99,22 @@
         <p>Estado: <span class="estado en-proceso">En proceso</span></p>
       </div>
     </section>
+
+    <!-- Código de Referido -->
+<section class="cuenta-referido">
+  <h3>Mi Código de Referido</h3>
+  <div class="referido-box">
+    <p>
+    ¡Invita a tus amigos a unirse a Lumikay! <br>
+    Comparte tu código con 5 personas y recibe <strong>5% de descuento en tu próxima compra</strong> cuando ellos realicen su primer pedido.
+    </p>
+    <div class="referido-codigo-contenedor">
+      <input type="text" id="codigo-referido" value="LUMI-1234" readonly>
+      <button id="copiar-referido" class="boton-carrito">Copiar</button>
+    </div>
+    <p id="mensaje-copiado" style="font-size: 0.9rem; color: green; display: none;">¡Código copiado!</p>
+  </div>
+</section>
   </main>
 
   <footer>
@@ -134,6 +150,18 @@
     <div id="resultados-busqueda"></div>
   </div>
 </div>
+
+<!-- Modal para detalles del producto desde la búsqueda -->
+<div id="modal-detalle-busqueda" class="modal oculto">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" id="cerrar-detalle-busqueda">&times;</span>
+    <img id="detalle-imagen" src="" alt="" />
+    <h3 id="detalle-titulo"></h3>
+    <p class="precio" id="detalle-precio"></p>
+    <p class="descripcion" id="detalle-descripcion"></p>
+  </div>
+</div>
+
 <a href="https://wa.me/51933848345" 
    class="boton-wsp" 
    target="_blank" 

@@ -9,19 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="top-banner">
-    <div class="banner-text">
-      <span>DELIVERY INMEDIATO | ENVÍOS A TODO LIMA</span>
-      <span>DELIVERY INMEDIATO | ENVÍOS A TODO LIMA</span>
-      <span>DELIVERY INMEDIATO | ENVÍOS A TODO LIMA</span>
-      <span>DELIVERY INMEDIATO | ENVÍOS A TODO LIMA</span>
-    </div>
-  </div>
   <header>
     <div class="header-left">
       <button class="boton-busqueda">🔍 Buscar</button>
     </div>
-
 
     <div class="header-center">
       <a href="#"><img src="Logo.png" alt="Logo MiTienda" class="logo-img" /></a>
@@ -40,103 +31,141 @@
     <a href="contacto.html" class="boton-seccion">Contacto</a>
   </nav>
 
-  <main class="galeria-productos container">
+  <main>
+    <section class="galeria-productos container"> 
     <h1>Catálogo de Velas</h1>
     <div class="productos-grid">
       <!-- Productos -->
-
-      <div class="producto" data-nombre="Vela Llamita" data-precio="13" data-img="LLama 2.jpg" data-desc="Pequeña vela con forma de llama. Aporta calidez y personalidad.">
-        <img src="LLama 2.jpg" alt="Llamita">
-        <h3>Vela Llamita</h3>
-        <p class="precio">S/ 13</p>
-        <button class="boton-carrito">Agregar al carrito</button>
-      </div>
-
-      <div class="producto" data-nombre="Vela Oso en esfera" data-precio="15" data-img="Osito en envase.jpg" data-desc="Tierno osito dentro de una esfera traslúcida. Perfecto para regalar.">
-        <img src="Osito en envase.jpg" alt="Oso en esfera">
-        <h3>Vela Oso en Esfera</h3>
-        <p class="precio">S/ 15</p>
-        <button class="boton-carrito">Agregar al carrito</button>
-      </div>
-
-      <div class="producto" data-nombre="Vela Copa con osito" data-precio="9" data-img="Osito en copita.jpg" data-desc="Mini copa con osito dentro. Ideal como recuerdo.">
-        <img src="Osito en copita.jpg" alt="Copa con osito">
-        <h3>Vela Copa con Osito</h3>
-        <p class="precio">S/ 9</p>
-        <button class="boton-carrito">Agregar al carrito</button>
-      </div>
-
-      <div class="producto" data-nombre="Vela Gatito" data-precio="10" data-img="Gato.jpg" data-desc="Vela con forma de gatito. Para los amantes de los felinos.">
-        <img src="Gato.jpg" alt="Gatito">
-        <h3>Vela Gatito</h3>
-        <p class="precio">S/ 10</p>
-        <button class="boton-carrito">Agregar al carrito</button>
-      </div>
-
-      <div class="producto" data-nombre="Set de 3 velas" data-precio="44" data-img="Logo vacio.jpg" data-desc="Pack de 3 velas aromáticas surtidas. ¡Lleva más por menos!">
-        <img src="Logo vacio.jpg" alt="Set 3 velas">
-        <h3>Set de 3 Velas</h3>
-        <p class="precio">S/ 44</p>
-        <button class="boton-carrito">Agregar al carrito</button>
-      </div>
-
-      <div class="producto" data-nombre="Velas Paquete de Osos Pequeño (4)" data-precio="15" data-img="Logo vacio.jpg" data-desc="Cuatro pequeñas velas con forma de osito, ideales para decorar con ternura.">
-        <img src="Logo vacio.jpg" alt="Paquete de Osos Pequeño">
-        <h3>Velas Paquete de Osos Pequeño (4)</h3>
-        <p class="precio">S/ 15</p>
-        <button class="boton-carrito">Agregar al carrito</button>
-      </div>
-
-      <div class="producto" data-nombre="Vela Oso Grande" data-precio="20" data-img="Logo vacio.jpg" data-desc="Una vela grande con forma de tierno oso. Duradera y encantadora.">
-        <img src="Logo vacio.jpg" alt="Oso Grande">
-        <h3>Vela Oso Grande</h3>
-        <p class="precio">S/ 20</p>
-        <button class="boton-carrito">Agregar al carrito</button>
-      </div>
-
-      <div class="producto" data-nombre="Vela Cilindrica pequeña" data-precio="14" data-img="Logo vacio.jpg" data-desc="Clásica y elegante, perfecta para cualquier espacio.">
-        <img src="Logo vacio.jpg" alt="Cilindrica">
-        <h3>Vela Cilindrica Pequeña</h3>
-        <p class="precio">S/ 14</p>
-        <button class="boton-carrito">Agregar al carrito</button>
-      </div>
-
-      <div class="producto" data-nombre="Vela Cilindrica grande" data-precio="22" data-img="Logo vacio.jpg" data-desc="Clásica y elegante, perfecta para cualquier espacio.">
-        <img src="Logo vacio.jpg" alt="Cilindrica grande">
-        <h3>Vela Cilindrica Grande</h3>
-        <p class="precio">S/ 22</p>
-        <button class="boton-carrito">Agregar al carrito</button>
-      </div>
-
-      <div class="producto" data-nombre="Vela Osos en esfera grande" data-precio="22" data-img="Logo vacio.jpg" data-desc="Versión grande con múltiples ositos dentro. Decoración adorable.">
-        <img src="Logo vacio.jpg" alt="Osos en esfera grande">
-        <h3>Vela Osos en Esfera Grande</h3>
-        <p class="precio">S/ 22</p>
-        <button class="boton-carrito">Agregar al carrito</button>
-      </div>
-
-    </div>
-  </main>
-
-    <!-- Modal Detalle Producto -->
-    <div id="modal-producto" class="modal oculto">
-      <div class="modal-contenido">
-        <span class="cerrar-modal" id="cerrar-producto">&times;</span>
-
-        <img id="modal-img" src="" alt="Imagen del producto">
-
-        <!-- Este bloque debe contener nombre, descripción y precio -->
-        <div id="modal-info">
-          <h3 id="modal-nombre">Nombre</h3>
-          <p id="modal-desc">Descripción del producto</p>
-          <p id="modal-precio">Precio</p>
+       <div class="producto-lista">
+        <div class="producto">
+            <img src="LLama 2.jpg" alt="Vela Llama" class="producto-imagen"
+                data-titulo="Vela Llamita"
+                data-precio="S/ 13.00"
+                data-descripcion="Una vela cálida con forma de llamita, perfecta para ambientes acogedores." />
+            <h3>Vela Llamita</h3>
+            <p class="precio">S/ 13.00</p>
+            <button class="boton-carrito">Agregar al carrito</button>
         </div>
-      </div>
+
+        <div class="producto">
+            <img src="Osito en copita.jpg" alt="Vela Copa con osito" class="producto-imagen"
+                data-titulo="Vela Copa con Osito"
+                data-precio="S/ 9.00"
+                data-descripcion="Tierno osito en una copa, ideal para regalar en ocasiones especiales." />
+            <h3>Vela Copa con Osito</h3>
+            <p class="precio">S/ 9.00</p>
+            <button class="boton-carrito">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="Osito en envase.jpg" alt="Vela Osito Esfera" class="producto-imagen"
+                data-titulo="Vela Osito Esfera"
+                data-precio="S/ 15.00"
+                data-descripcion="Un osito dentro de una esfera, mezcla de ternura y estilo decorativo." />
+            <h3>Vela Osito Esfera</h3>
+            <p class="precio">S/ 15.00</p>
+            <button class="boton-carrito">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="Gato.jpg" alt="Vela Gato" class="producto-imagen"
+                data-titulo="Vela Gatito"
+                data-precio="S/ 10.00"
+                data-descripcion="Vela en forma de gatito, para amantes de los felinos y lo adorable." />
+            <h3>Vela Gatito</h3>
+            <p class="precio">S/ 10.00</p>
+            <button class="boton-carrito">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="Logo vacio.jpg" alt="Set de 3 Velas" class="producto-imagen"
+                data-titulo="Set de 3 Velas"
+                data-precio="S/ 44.00"
+                data-descripcion="Tres velas artesanales en diferentes estilos para decorar cualquier rincón." />
+            <h3>Set de 3 Velas</h3>
+            <p class="precio">S/ 44.00</p>
+            <button class="boton-carrito">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="Logo vacio.jpg" alt="Velas Osos Pequeño" class="producto-imagen"
+                data-titulo="Velas Paquete de Osos Pequeño (4)"
+                data-precio="S/ 15.00"
+                data-descripcion="Cuatro pequeñas velas en forma de osito, dulces y encantadoras." />
+            <h3>Velas Paquete de Osos Pequeño (4)</h3>
+            <p class="precio">S/ 15.00</p>
+            <button class="boton-carrito">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="Logo vacio.jpg" alt="Vela Oso Grande" class="producto-imagen"
+                data-titulo="Vela Oso Grande"
+                data-precio="S/ 20.00"
+                data-descripcion="Gran vela con forma de oso, protagonista en cualquier decoración." />
+            <h3>Vela Oso Grande</h3>
+            <p class="precio">S/ 20.00</p>
+            <button class="boton-carrito">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="Logo vacio.jpg" alt="Vela Cilíndrica Pequeña" class="producto-imagen"
+                data-titulo="Vela Cilíndrica Pequeña"
+                data-precio="S/ 14.00"
+                data-descripcion="Diseño simple y elegante, ideal para mesas pequeñas o centros de mesa." />
+            <h3>Vela Cilindrica Pequeña</h3>
+            <p class="precio">S/ 14.00</p>
+            <button class="boton-carrito">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="Logo vacio.jpg" alt="Vela Cilíndrica Grande" class="producto-imagen"
+                data-titulo="Vela Cilíndrica Grande"
+                data-precio="S/ 22.00"
+                data-descripcion="Versión grande para decorar espacios amplios con luz suave y aroma." />
+            <h3>Vela Cilindrica Grande</h3>
+            <p class="precio">S/ 22.00</p>
+            <button class="boton-carrito">Agregar al carrito</button>
+        </div>
+
+        <div class="producto">
+            <img src="Logo vacio.jpg" alt="Vela Osos en Esfera Grande" class="producto-imagen"
+                data-titulo="Vela Osos en Esfera Grande"
+                data-precio="S/ 22.00"
+                data-descripcion="Vela temática con ositos dentro de una esfera grande, única y decorativa." />
+            <h3>Vela Osos en Esfera Grande</h3>
+            <p class="precio">S/ 22.00</p>
+            <button class="boton-carrito">Agregar al carrito</button>
+        </div>
     </div>
 
-  <footer>
-    <p>&copy; 2025 Lumikay - Todos los derechos reservados.</p>
-  </footer>
+
+    <div id="modal-producto">
+        <div class="modal-contenido">
+            <span id="cerrar-modal-producto">&times;</span>
+            <img id="modal-img" src="" alt="">
+            <h3 id="modal-titulo"></h3>
+            <p class="precio" id="modal-precio"></p>
+            <p class="descripcion" id="modal-descripcion"></p>
+        </div>
+    </div>
+</main>
+<footer style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+  <div>
+    <a href="https://www.instagram.com/lumikay.store/" target="_blank">
+      <img src="Instagram.png" 
+           alt="Instagram" style="width: 32px; height: 32px; margin-right: 10px;">
+    </a>
+    
+    <a href="https://www.tiktok.com/@lumikay_store" target="_blank">
+      <img src="Tiktok.png" 
+           alt="TikTok" style="width: 32px; height: 32px;">
+    </a>
+  </div>
+  
+  <p style="margin: 0;">&copy; 2025 Lumikay - Todos los derechos reservados.</p>
+</footer>
+
+
 
 <!-- Modal de Cuenta -->
 <div id="modal-cuenta" class="modal oculto">
@@ -159,34 +188,56 @@
   </div>
 </div>
 
-  <!-- Modal búsqueda -->
+
   <div id="modal-busqueda" class="modal oculto">
-    <div class="modal-contenido">
-      <span class="cerrar-modal" id="cerrar-busqueda">&times;</span>
-      <input type="text" id="input-busqueda" placeholder="Buscar productos..." />
-      <div id="resultados-busqueda"></div>
-    </div>
+  <div class="modal-contenido">
+    <span class="cerrar-modal" id="cerrar-busqueda">&times;</span>
+    <input type="text" id="input-busqueda" placeholder="Buscar productos..." />
+    <div id="resultados-busqueda"></div>
   </div>
 
-  <!-- WhatsApp -->
-  <a href="https://wa.me/51933848345" class="boton-wsp" target="_blank" title="Contáctanos por WhatsApp">
-    <img src="WhatsApp.png" alt="WhatsApp" />
-  </a>
-
-  <!-- Carrito (modal mejorado) -->
-  <div id="carrito-modal" class="modal oculto">
-    <div class="modal-contenido">
-      <span class="cerrar-modal" id="cerrar-carrito">&times;</span>
-      <h2>Tu Carrito</h2>
-      <div id="carrito-items"></div>
-      <div class="carrito-total">
-        <strong>Total: S/ <span id="carrito-total">0.00</span></strong>
-      </div>
-      <button class="boton-carrito" id="finalizar-compra">Finalizar compra</button>
-    </div>
+  <!-- Modal para detalles del producto desde la búsqueda -->
+<div id="modal-detalle-busqueda" class="modal oculto">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" id="cerrar-detalle-busqueda">&times;</span>
+    <img id="detalle-imagen" src="" alt="" />
+    <h3 id="detalle-titulo"></h3>
+    <p class="precio" id="detalle-precio"></p>
+    <p class="descripcion" id="detalle-descripcion"></p>
   </div>
+</div>
 
-  <div id="notificacion-contenedor"></div>
+</div>
+<a href="https://wa.me/51933848345" 
+   class="boton-wsp" 
+   target="_blank" 
+   title="Contáctanos por WhatsApp">
+  <img src="WhatsApp.png" alt="WhatsApp" />
+</a>
+<!-- Carrito (modal mejorado) -->
+<div id="carrito-modal" class="modal oculto">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" id="cerrar-carrito">&times;</span>
+    <h2>Tu Carrito</h2>
+    
+    <div id="carrito-items"></div>
+    
+    <!-- Campo para el código de descuento -->
+    <div class="carrito-cupon">
+      <input type="text" id="cupon-input" placeholder="Código de descuento" />
+      <button id="aplicar-cupon" class="boton-carrito">Aplicar</button>
+      <p id="cupon-mensaje" style="color: green; margin-top: 0.5em;"></p>
+    </div>
+    
+    <!-- Total del carrito -->
+    <div class="carrito-total">
+      <strong>Total: S/ <span id="carrito-total">0.00</span></strong>
+    </div>
+
+    <button class="boton-carrito" id="finalizar-compra">Finalizar compra</button>
+  </div>
+</div>
+<div id="notificacion-contenedor"></div>
   <script src="script.js"></script>
 </body>
 </html>

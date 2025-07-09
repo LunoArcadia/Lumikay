@@ -60,9 +60,21 @@
     </div>
   </section>
    <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Lumikay - Todos los derechos reservados.</p>
-  </footer>
+  <footer style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+  <div>
+    <a href="https://www.instagram.com/lumikay.store/" target="_blank">
+      <img src="Instagram.png" 
+           alt="Instagram" style="width: 32px; height: 32px; margin-right: 10px;">
+    </a>
+    
+    <a href="https://www.tiktok.com/@lumikay_store" target="_blank">
+      <img src="Tiktok.png" 
+           alt="TikTok" style="width: 32px; height: 32px;">
+    </a>
+  </div>
+  
+  <p style="margin: 0;">&copy; 2025 Lumikay - Todos los derechos reservados.</p>
+</footer>
 
   <!-- Modales -->
   <div id="modal-cuenta" class="modal oculto">
@@ -90,6 +102,17 @@
       <div id="resultados-busqueda"></div>
     </div>
   </div>
+
+  <!-- Modal para detalles del producto desde la búsqueda -->
+<div id="modal-detalle-busqueda" class="modal oculto">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" id="cerrar-detalle-busqueda">&times;</span>
+    <img id="detalle-imagen" src="" alt="" />
+    <h3 id="detalle-titulo"></h3>
+    <p class="precio" id="detalle-precio"></p>
+    <p class="descripcion" id="detalle-descripcion"></p>
+  </div>
+</div>
 
   <!-- WhatsApp flotante -->
   <a href="https://wa.me/51933848345" 

@@ -30,11 +30,43 @@ const inputBusqueda = document.getElementById("input-busqueda");
 const resultados = document.getElementById("resultados-busqueda");
 
 const productos = [
-  { nombre: "Vela Llama", imagen: "LLama 2.jpg", enlace: "#" },
-  { nombre: "Vela Copa con osito", imagen: "Osito en copita.jpg", enlace: "#" },
+  { nombre: "Vela Llamita", imagen: "LLama 2.jpg", enlace: "#" },
+  { nombre: "Vela Copa con Osito", imagen: "Osito en copita.jpg", enlace: "#" },
   { nombre: "Vela Osito Esfera", imagen: "Osito en envase.jpg", enlace: "#" },
-  { nombre: "Vela Gato", imagen: "Gato.jpg", enlace: "#" }
+  { nombre: "Vela Gatito", imagen: "Gato.jpg", enlace: "#" }
 ];
+
+// ✨ Datos para el modal de detalle
+const productosDetalle = {
+  "Vela Llamita": {
+    img: "LLama 2.jpg",
+    precio: "S/ 13.00",
+    descripcion: "Una vela en forma de llamita, ideal para regalar o decorar con ternura y calidez."
+  },
+  "Vela Copa con Osito": {
+    img: "Osito en copita.jpg",
+    precio: "S/ 9.00",
+    descripcion: "Un encantador osito dentro de una copa. Perfecto para detalles delicados y tiernos."
+  },
+  "Vela Osito Esfera": {
+    img: "Osito en envase.jpg",
+    precio: "S/ 15.00",
+    descripcion: "Osito dentro de una esfera de cera, elegante y adorable. Aporta calidez y estilo."
+  },
+  "Vela Gatito": {
+    img: "Gato.jpg",
+    precio: "S/ 10.00",
+    descripcion: "Pequeña vela en forma de gatito. Perfecta para amantes de los felinos y la decoración minimalista."
+  }
+};
+
+// ✨ Modal de detalle
+const modalDetalle = document.getElementById("modal-detalle-busqueda");
+const cerrarDetalle = document.getElementById("cerrar-detalle-busqueda");
+const detalleImagen = document.getElementById("detalle-imagen");
+const detalleTitulo = document.getElementById("detalle-titulo");
+const detallePrecio = document.getElementById("detalle-precio");
+const detalleDescripcion = document.getElementById("detalle-descripcion");
 
 if (botonBusqueda) {
   botonBusqueda.addEventListener("click", () => {
@@ -60,13 +92,31 @@ if (botonBusqueda) {
       const div = document.createElement("div");
       div.classList.add("producto-busqueda");
       div.innerHTML = `<img src="${p.imagen}" alt="${p.nombre}"><span>${p.nombre}</span>`;
+
       div.addEventListener("click", () => {
-        window.location.href = p.enlace;
+        const datos = productosDetalle[p.nombre];
+        if (datos) {
+          detalleImagen.src = datos.img;
+          detalleImagen.alt = p.nombre;
+          detalleTitulo.textContent = p.nombre;
+          detallePrecio.textContent = datos.precio;
+          detalleDescripcion.textContent = datos.descripcion;
+          modalDetalle.classList.remove("oculto");
+        } else {
+          window.location.href = p.enlace;
+        }
       });
+
       resultados.appendChild(div);
     });
   });
 }
+
+// ✨ Cerrar modal de detalle
+cerrarDetalle?.addEventListener("click", () => {
+  modalDetalle.classList.add("oculto");
+});
+
 
 // =====================
 // Carrusel automático
@@ -88,7 +138,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const cerrarCuenta = document.getElementById("cerrar-cuenta");
   const formCuenta = document.getElementById("form-cuenta");
 
-  // Nuevo: Si ya hay sesión, redirige al hacer click en "Cuenta"
+  // Nuevos elementos para los otros modales
+  const enlaceCrearCuenta = document.getElementById("enlace-crear-cuenta");
+  const enlaceOlvido = document.getElementById("enlace-olvido");
+
+  const modalCrearCuenta = document.getElementById("modal-crear-cuenta");
+  const modalRecuperar = document.getElementById("modal-recuperar");
+
+  const cerrarCrear = document.getElementById("cerrar-crear-cuenta");
+  const cerrarRecuperar = document.getElementById("cerrar-recuperar");
+
+  // Mostrar el modal de cuenta solo si no hay sesión
   if (enlaceCuenta) {
     enlaceCuenta.addEventListener("click", (e) => {
       e.preventDefault();
@@ -101,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Cerrar modal de iniciar sesión
   if (cerrarCuenta) {
     cerrarCuenta.addEventListener("click", () => {
       modalCuenta.classList.add("oculto");
@@ -109,19 +170,52 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Enviar formulario de iniciar sesión
   if (formCuenta) {
     formCuenta.addEventListener("submit", (e) => {
       e.preventDefault();
       const usuario = document.getElementById("usuario").value.trim();
       const contrasena = document.getElementById("contrasena").value.trim();
 
-      // Aquí puedes agregar más usuarios si deseas
+      // Aquí puedes agregar más validaciones
       if (usuario === "isaias" && contrasena === "isaias811") {
         localStorage.setItem("usuarioActivo", "Adrián Isaías Huamaní Ramos");
         window.location.href = "cuenta.html";
       } else {
         mostrarError("Usuario o contraseña incorrectos.");
       }
+    });
+  }
+
+  // Mostrar modal de Crear Cuenta
+  if (enlaceCrearCuenta) {
+    enlaceCrearCuenta.addEventListener("click", (e) => {
+      e.preventDefault();
+      modalCuenta.classList.add("oculto");
+      modalCrearCuenta.classList.remove("oculto");
+    });
+  }
+
+  // Mostrar modal de Recuperar Contraseña
+  if (enlaceOlvido) {
+    enlaceOlvido.addEventListener("click", (e) => {
+      e.preventDefault();
+      modalCuenta.classList.add("oculto");
+      modalRecuperar.classList.remove("oculto");
+    });
+  }
+
+  // Cerrar modal de Crear Cuenta
+  if (cerrarCrear) {
+    cerrarCrear.addEventListener("click", () => {
+      modalCrearCuenta.classList.add("oculto");
+    });
+  }
+
+  // Cerrar modal de Recuperar Contraseña
+  if (cerrarRecuperar) {
+    cerrarRecuperar.addEventListener("click", () => {
+      modalRecuperar.classList.add("oculto");
     });
   }
 
@@ -142,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (error) error.remove();
   }
 });
+
 
 
 
@@ -378,48 +473,69 @@ if (btnAgregarPersonalizado) {
   });
 }
 
+
+//Modal de producto//
+
+document.querySelectorAll('.producto-imagen').forEach(img => {
+  img.addEventListener('click', () => {
+    const modal = document.getElementById('modal-producto');
+    document.getElementById('modal-img').src = img.src;
+    document.getElementById('modal-titulo').textContent = img.dataset.titulo;
+    document.getElementById('modal-precio').textContent = img.dataset.precio;
+    document.getElementById('modal-descripcion').textContent = img.dataset.descripcion;
+    modal.style.display = 'flex';
+  });
+});
+
+document.getElementById('cerrar-modal-producto').addEventListener('click', () => {
+  document.getElementById('modal-producto').style.display = 'none';
+});
+
+window.addEventListener('click', e => {
+  const modal = document.getElementById('modal-producto');
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+// Modal de producto destacado//
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Elementos del modal
   const modal = document.getElementById("modal-producto");
-  const modalImg = document.getElementById("modal-img");
-  const modalNombre = document.getElementById("modal-nombre");
-  const modalDesc = document.getElementById("modal-desc");
-  const modalPrecio = document.getElementById("modal-precio");
-  const cerrarModal = document.getElementById("cerrar-producto");
+  const cerrarModal = document.getElementById("cerrar-modal-producto");
+  const modalImg = document.getElementById("modal-producto-imagen");
+  const modalTitulo = document.getElementById("modal-producto-titulo");
+  const modalPrecio = document.getElementById("modal-producto-precio");
+  const modalDescripcion = document.getElementById("modal-producto-descripcion");
 
-  const productos = document.querySelectorAll(".producto");
+  const descripciones = {
+    "Vela Llamita": "Una adorable vela en forma de llama que ilumina con ternura cualquier rincón.",
+    "Vela Copa con Osito": "Dulce combinación de vela en copa decorada con un tierno osito.",
+    "Vela Osito Esfera": "Perfecta para regalo. Un osito en un encantador recipiente redondo.",
+    "Vela Gatito": "Una vela para amantes de los gatos. Delicada y simpática."
+  };
 
-  // Abrir modal con info del producto
-  productos.forEach((producto) => {
-    producto.addEventListener("click", () => {
-      const nombre = producto.getAttribute("data-nombre");
-      const precio = producto.getAttribute("data-precio");
-      const descripcion = producto.getAttribute("data-desc");
-      const imagen = producto.getAttribute("data-img");
+  // Asignar evento a todas las imágenes dentro de productos destacados
+  document.querySelectorAll(".producto img").forEach(img => {
+    img.addEventListener("click", () => {
+      const producto = img.closest(".producto");
+      const titulo = producto.querySelector("h3").textContent;
+      const precio = producto.querySelector(".precio").textContent;
 
-      modalImg.src = imagen;
-      modalImg.alt = nombre;
-      modalNombre.textContent = nombre;
-      modalDesc.textContent = descripcion;
-      modalPrecio.textContent = `S/ ${precio}`; // ✅
+      modalImg.src = img.src;
+      modalImg.alt = titulo;
+      modalTitulo.textContent = titulo;
+      modalPrecio.textContent = precio;
+      modalDescripcion.textContent = descripciones[titulo] || "Producto sin descripción.";
 
       modal.classList.remove("oculto");
-      modal.classList.add("activo");
+      modal.style.display = "flex";
     });
   });
 
-  // Cerrar modal al hacer clic en "X"
   cerrarModal.addEventListener("click", () => {
-    modal.classList.remove("activo");
     modal.classList.add("oculto");
-  });
-
-  // Cerrar modal si se hace clic fuera del contenido
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("activo");
-      modal.classList.add("oculto");
-    }
+    modal.style.display = "none";
   });
 });
 

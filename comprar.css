@@ -1,213 +1,231 @@
-/* ===== Estilos generales elegantes ===== */
-body {
-  font-family: 'Quicksand', sans-serif;
-  background-color: #fffdf8;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-
-main {
-  padding: 3em 2em;
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-/* ===== Título ===== */
-h1 {
+/* Título del catálogo */
+.galeria-productos h1 {
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 2.5em;
-  font-size: 2.2em;
-  color: #6a4c37;
-  position: relative;
+  color: #523d29;
+  margin: 2rem 0 2rem;
+  font-family: 'Quicksand', sans-serif;
 }
 
-h1::after {
-  content: '';
-  width: 80px;
-  height: 3px;
-  background-color: #b08c76;
-  display: block;
-  margin: 0.5em auto 0;
-  border-radius: 5px;
-}
-
-/* ===== Galería de productos ===== */
+/* Grid de productos */
 .productos-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2em;
-}
-
-.producto {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  padding: 1.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  overflow: hidden;
 }
 
-.producto:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-.producto img {
-  width: 100%;
-  max-height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1em;
-}
-
-.producto h3 {
-  margin: 0.5em 0 0.3em;
-  font-size: 1.1em;
-  color: #5e3f2b;
-  text-align: center;
-}
-
-.producto .precio {
-  font-size: 1.1em;
-  font-weight: 600;
-  color: #3c3c3d;
-  margin-bottom: 1em;
-}
-
-.boton-carrito {
-  padding: 0.6em 1.4em;
-  background-color: #b08c76;
-  border: none;
-  border-radius: 30px;
-  color: #fff;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.boton-carrito:hover {
-  background-color: #9c7963;
-  transform: scale(1.05);
-}
-
-/* ===== Modal general ===== */
-.modal {
+/* Footer adaptado */
+footer {
   display: flex;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: scale(1.05);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  color: white;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+footer img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1); /* Blanco sobre fondo oscuro */
+}
+
+footer img:hover {
+  transform: scale(1.1);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Modal carrito */
+#carrito-modal .modal-contenido {
+  background-color: #fff;
+  color: #523d29;
+  font-family: 'Quicksand', sans-serif;
+}
+
+#carrito-modal h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Cuadro de cupón */
+.carrito-cupon {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.carrito-cupon input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.carrito-cupon button {
+  padding: 0.5rem 1rem;
+  background-color: #523d29;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.carrito-cupon button:hover {
+  background-color: #6a4c37;
+}
+
+/* Carrito Total */
+.carrito-total {
+  margin-top: 1rem;
+  text-align: right;
+  font-size: 1.1rem;
+  color: #523d29;
+}
+
+/* Modal búsqueda reutiliza estilos del modal general */
+/* Puedes extender desde tu CSS base si es necesario */
+
+/* WhatsApp Button (ajuste coherente con tema) */
+.boton-wsp {
   position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.65);
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  padding: 2em;
-  overflow-y: auto;
+  transition: transform 0.3s ease;
 }
 
-
-.modal-contenido {
-  background: white;
-  border-radius: 10px;
-  padding: 2em;
-  max-width: 800px;
-  width: 90%;
-  display: flex;
-  gap: 2em;
-  flex-wrap: wrap;
-  position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.boton-wsp:hover {
+  transform: scale(1.1);
 }
 
-#modal-img {
-  flex: 1 1 300px;
-  max-width: 350px;
+.boton-wsp img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Responsive Footer */
+@media screen and (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .carrito-cupon {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .carrito-cupon input,
+  .carrito-cupon button {
+    width: 100%;
+  }
+}
+
+.producto-lista {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 2rem;
+  justify-items: center;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .producto-lista {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablet */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .producto-lista {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil horizontal */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .producto-lista {
+    grid-template-columns: 1fr; /* 1 columna en móviles pequeños */
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+#modal-producto {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  border-radius: 8px;
-  object-fit: contain;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
 }
 
-#modal-info {
-  flex: 1 1 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-align: left;
+#modal-producto .modal-contenido {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  animation: fadeIn 0.3s ease-out;
 }
 
-#modal-nombre {
-  font-size: 1.5em;
-  color: #6a4c37;
-  margin-bottom: 0.5em;
+#modal-producto img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 1rem auto;
 }
 
-#modal-desc {
-  font-size: 1em;
-  margin-bottom: 1em;
-  color: #555;
+#modal-producto h3 {
+  margin: 0.5rem 0;
+  color: #523d29;
 }
 
-#modal-precio {
-  font-size: 1.2em;
+#modal-producto .precio {
   font-weight: bold;
-  color: #3c3c3d;
+  margin-bottom: 1rem;
 }
 
-
-/* ===== Cerrar modal ===== */
-.cerrar-modal {
-  position: absolute;
-  top: 0.8em;
-  right: 1em;
-  font-size: 1.5em;
-  color: #999;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.cerrar-modal:hover {
+#modal-producto .descripcion {
+  font-size: 0.95rem;
   color: #333;
 }
 
-/* ===== Ocultar elementos ===== */
-.oculto {
-  display: none;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 1024px) {
-  .productos-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .productos-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .productos-grid {
-    grid-template-columns: 1fr;
-    padding: 0 1em;
-  }
-
-  .producto img {
-    max-height: 160px;
-  }
-}
-.modal.activo {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: scale(1);
+#cerrar-modal-producto {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
 }

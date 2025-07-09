@@ -92,13 +92,31 @@
       </section>
       </div>
     </section>
+
+
+    
   </main>
 
-  <footer>
-    <p>&copy; 2025 Lumikay - Todos los derechos reservados.</p>
-  </footer>
+<footer style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+  <div>
+    <a href="https://www.instagram.com/lumikay.store/" target="_blank">
+      <img src="Instagram.png" 
+           alt="Instagram" style="width: 32px; height: 32px; margin-right: 10px;">
+    </a>
+    
+    <a href="https://www.tiktok.com/@lumikay_store" target="_blank">
+      <img src="Tiktok.png" 
+           alt="TikTok" style="width: 32px; height: 32px;">
+    </a>
+  </div>
+  
+  <p style="margin: 0;">&copy; 2025 Lumikay - Todos los derechos reservados.</p>
+</footer>
+
+
 
 <!-- Modal de Cuenta -->
+<!-- Modal: Iniciar sesión -->
 <div id="modal-cuenta" class="modal oculto">
   <div class="modal-contenido">
     <span class="cerrar-modal" id="cerrar-cuenta">&times;</span>
@@ -113,12 +131,45 @@
       <button type="submit" class="boton-carrito">Iniciar Sesión</button>
     </form>
     <div class="extra-links">
-      <a href="#">¿Olvidaste tu contraseña?</a> |
-      <a href="#">Crear cuenta</a>
+      <a href="#" id="enlace-olvido">¿Olvidaste tu contraseña?</a> |
+      <a href="#" id="enlace-crear-cuenta">Crear cuenta</a>
     </div>
   </div>
 </div>
 
+<!-- Modal: Crear cuenta -->
+<div id="modal-crear-cuenta" class="modal oculto">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" id="cerrar-crear-cuenta">&times;</span>
+    <h2>Crear cuenta</h2>
+    <form>
+      <label for="nuevo-usuario">Correo electrónico</label>
+      <input type="email" id="nuevo-usuario" required />
+
+      <label for="nueva-contrasena">Contraseña</label>
+      <input type="password" id="nueva-contrasena" required />
+
+      <label for="confirmar-contrasena">Confirmar contraseña</label>
+      <input type="password" id="confirmar-contrasena" required />
+
+      <button type="submit" class="boton-carrito">Registrarse</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal: Recuperar contraseña -->
+<div id="modal-recuperar" class="modal oculto">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" id="cerrar-recuperar">&times;</span>
+    <h2>Recuperar contraseña</h2>
+    <form>
+      <label for="recuperar-correo">Ingresa tu correo electrónico</label>
+      <input type="email" id="recuperar-correo" required />
+
+      <button type="submit" class="boton-carrito">Enviar enlace</button>
+    </form>
+  </div>
+</div>
 
   <div id="modal-busqueda" class="modal oculto">
   <div class="modal-contenido">
@@ -127,6 +178,30 @@
     <div id="resultados-busqueda"></div>
   </div>
 </div>
+
+<!-- Modal para detalles del producto desde la búsqueda -->
+<div id="modal-detalle-busqueda" class="modal oculto">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" id="cerrar-detalle-busqueda">&times;</span>
+    <img id="detalle-imagen" src="" alt="" />
+    <h3 id="detalle-titulo"></h3>
+    <p class="precio" id="detalle-precio"></p>
+    <p class="descripcion" id="detalle-descripcion"></p>
+  </div>
+</div>
+
+<!-- Modal de Producto (idéntico al de comprar.html) -->
+<div id="modal-producto" class="modal oculto">
+  <div class="modal-contenido">
+    <span id="cerrar-modal-producto">&times;</span>
+    <img id="modal-producto-imagen" src="" alt="">
+    <h3 id="modal-producto-titulo"></h3>
+    <p class="precio" id="modal-producto-precio"></p>
+    <p class="descripcion" id="modal-producto-descripcion"></p>
+  </div>
+</div>
+
+<!-- WhatsApp flotante -->
 <a href="https://wa.me/51933848345" 
    class="boton-wsp" 
    target="_blank" 
